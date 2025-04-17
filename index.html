@@ -218,7 +218,6 @@
             // Add the product if it's not in the cart already
             cart.push(product);
             sessionStorage.setItem('cart', JSON.stringify(cart));
-            alert('Item added to cart!');
             cartData();
           } else {
             alert('This item is already in your cart!');
