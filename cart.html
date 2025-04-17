@@ -81,7 +81,7 @@
 
 
   <!--Cart Section-->
-  <main  class="margin-top-150">
+  <main class="margin-top-150">
     <h2 class="d-flex justify-content-center p-1">Cart</h2>
     <hr>
     <div class="d-flex justify-content-center flex-wrap">
@@ -120,144 +120,147 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-    <script type="module">
-      document.addEventListener('DOMContentLoaded', function () {
-        const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-        const cartItemsContainer = document.getElementById('cart-items');
-        const productCountElement = document.getElementById('product-count');
-        const cartTotalElement = document.getElementById('cart-total');
-        const totalAmountElement = document.getElementById('total-amount');
-        const cartCountElement = document.getElementById('cart-count');
-    
-        if (cart.length === 0) {
-          cartItemsContainer.innerHTML = '<p class="text-center">Your cart is empty.</p>';
-        } else {
-          let total = 0;
-    
-          cart.forEach((product, index) => {
-            const quantity = product.quantity || 1;
-            const itemTotal = product.price * quantity;
-    
-            // Parent row
-            const row = document.createElement('div');
-            row.className = 'row align-items-center py-3 border-bottom';
-    
-            // Column 1: Image
-            const imgCol = document.createElement('div');
-            imgCol.className = 'col-md-2 col-4';
-            const img = document.createElement('img');
-            img.src = product.image;
-            img.alt = product.title;
-            img.className = 'img-fluid';
-            img.style.width = '120px';
-            img.style.height = '120px';
-            imgCol.appendChild(img);
-    
-            // Column 2: Title + Price
-            const detailsCol = document.createElement('div');
-            detailsCol.className = 'col-md-6 col-8';
-            const title = document.createElement('h6');
-            title.textContent = product.title;
-            title.className = 'mb-2';
-            const itemTotalText = document.createElement('p');
-            itemTotalText.className = 'text-muted mb-0';
-            itemTotalText.textContent = `$${product.price.toFixed(2)} x ${quantity} = $${itemTotal.toFixed(2)}`;
-            detailsCol.appendChild(title);
-            detailsCol.appendChild(itemTotalText);
-    
-            // Column 3: Quantity Controls + Remove X
-            const controlsCol = document.createElement('div');
-            controlsCol.className = 'col-md-4 col-12 d-flex align-items-center justify-content-end gap-3';
-    
-            // Quantity control group
-            const qtyControl = document.createElement('div');
-            qtyControl.className = 'd-flex align-items-center gap-2';
-    
-            const minusBtn = document.createElement('button');
-            minusBtn.textContent = '-';
-            minusBtn.className = 'btn btn-outline-secondary btn-sm';
-    
-            const qty = document.createElement('span');
-            qty.textContent = quantity;
-            qty.className = 'fw-bold';
-    
-            const plusBtn = document.createElement('button');
-            plusBtn.textContent = '+';
-            plusBtn.className = 'btn btn-outline-secondary btn-sm';
-    
-            // Update quantity handlers
-            minusBtn.addEventListener('click', () => {
-              product.quantity = quantity - 1;
-              if (product.quantity <= 0) {
-                cart.splice(index, 1);
-              }
-              sessionStorage.setItem('cart', JSON.stringify(cart));
-              window.location.reload();
-            });
-    
-            plusBtn.addEventListener('click', () => {
-              product.quantity = quantity + 1;
-              sessionStorage.setItem('cart', JSON.stringify(cart));
-              window.location.reload();
-            });
-    
-            qtyControl.appendChild(minusBtn);
-            qtyControl.appendChild(qty);
-            qtyControl.appendChild(plusBtn);
-    
-            // Remove X button
-            const removeX = document.createElement('span');
-            removeX.innerHTML = '&times;';
-            removeX.className = 'text-black fw-bold fs-4';
-            removeX.style.cursor = 'pointer';
-            removeX.title = 'Remove item';
-            removeX.addEventListener('click', () => {
+  <script type="module">
+    document.addEventListener('DOMContentLoaded', function () {
+      const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+      const cartItemsContainer = document.getElementById('cart-items');
+      const productCountElement = document.getElementById('product-count');
+      const cartTotalElement = document.getElementById('cart-total');
+      const totalAmountElement = document.getElementById('total-amount');
+      const cartCountElement = document.getElementById('cart-count');
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p class="text-center">Your cart is empty.</p>';
+      } else {
+        let total = 0;
+
+        cart.forEach((product, index) => {
+          const quantity = product.quantity || 1;
+          const itemTotal = product.price * quantity;
+
+          // Parent row
+          const row = document.createElement('div');
+          row.className = 'row align-items-center py-3 border-bottom';
+
+          // Column 1: Image
+          const imgCol = document.createElement('div');
+          imgCol.className = 'col-md-2 col-4';
+          const img = document.createElement('img');
+          img.src = product.image;
+          img.alt = product.title;
+          img.className = 'img-fluid';
+          img.style.width = '120px';
+          img.style.height = '120px';
+          imgCol.appendChild(img);
+
+          // Column 2: Title + Price
+          const detailsCol = document.createElement('div');
+          detailsCol.className = 'col-md-6 col-8';
+          const title = document.createElement('h6');
+          title.textContent = product.title;
+          title.className = 'mb-2';
+          const itemTotalText = document.createElement('p');
+          itemTotalText.className = 'text-muted mb-0';
+          itemTotalText.textContent = `$${product.price.toFixed(2)} x ${quantity} = $${itemTotal.toFixed(2)}`;
+          detailsCol.appendChild(title);
+          detailsCol.appendChild(itemTotalText);
+
+          // Column 3: Quantity Controls + Remove X
+          const controlsCol = document.createElement('div');
+          controlsCol.className = 'col-md-4 col-12 d-flex align-items-center justify-content-end gap-3';
+
+          // Quantity control group
+          const qtyControl = document.createElement('div');
+          qtyControl.className = 'd-flex align-items-center gap-2';
+
+          const minusBtn = document.createElement('button');
+          minusBtn.textContent = '-';
+          minusBtn.className = 'btn btn-outline-secondary btn-sm';
+
+          const qty = document.createElement('span');
+          qty.textContent = quantity;
+          qty.className = 'fw-bold';
+
+          const plusBtn = document.createElement('button');
+          plusBtn.textContent = '+';
+          plusBtn.className = 'btn btn-outline-secondary btn-sm';
+
+          // Update quantity handlers
+          minusBtn.addEventListener('click', () => {
+            cart[index].quantity = (product.quantity || 1) - 1;
+            if (cart[index].quantity <= 0) {
               cart.splice(index, 1);
-              sessionStorage.setItem('cart', JSON.stringify(cart));
-              window.location.reload();
-            });
-    
-            // Append qty control + remove to the controls column
-            controlsCol.appendChild(qtyControl);
-            controlsCol.appendChild(removeX);
-    
-            // Assemble the row
-            row.appendChild(imgCol);
-            row.appendChild(detailsCol);
-            row.appendChild(controlsCol);
-    
-            cartItemsContainer.appendChild(row);
-    
-            total += itemTotal;
+            }
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            window.location.reload();
+            cartData();
           });
-    
-          const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-          productCountElement.textContent = `(${totalItems})`;
-          cartTotalElement.textContent = `$ ${total.toFixed(2)}`;
-          totalAmountElement.textContent = `$ ${(total + 30).toFixed(2)}`;
-          cartCountElement.textContent = totalItems;
-        }
-    
-        // Checkout handler
-        document.getElementById('checkout-btn')?.addEventListener('click', function () {
-          if (cart.length === 0) {
-            alert('Your cart is empty!');
-          } else {
-            alert('Proceeding to checkout...');
-          }
+
+
+          plusBtn.addEventListener('click', () => {
+            cart[index].quantity = (product.quantity || 1) + 1;
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            window.location.reload();
+            cartData();
+          });
+
+
+          qtyControl.appendChild(minusBtn);
+          qtyControl.appendChild(qty);
+          qtyControl.appendChild(plusBtn);
+
+          // Remove X button
+          const removeX = document.createElement('span');
+          removeX.innerHTML = '&times;';
+          removeX.className = 'text-black fw-bold fs-4';
+          removeX.style.cursor = 'pointer';
+          removeX.title = 'Remove item';
+          removeX.addEventListener('click', () => {
+            cart.splice(index, 1);
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            window.location.reload();
+          });
+
+          // Append qty control + remove to the controls column
+          controlsCol.appendChild(qtyControl);
+          controlsCol.appendChild(removeX);
+
+          // Assemble the row
+          row.appendChild(imgCol);
+          row.appendChild(detailsCol);
+          row.appendChild(controlsCol);
+
+          cartItemsContainer.appendChild(row);
+
+          total += itemTotal;
         });
+
+        const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        productCountElement.textContent = `(${totalItems})`;
+        cartTotalElement.textContent = `$ ${total.toFixed(2)}`;
+        totalAmountElement.textContent = `$ ${(total + 30).toFixed(2)}`;
+        cartCountElement.textContent = totalItems;
+      }
+
+      // Checkout handler
+      document.getElementById('checkout-btn')?.addEventListener('click', function () {
+        if (cart.length === 0) {
+          alert('Your cart is empty!');
+        } else {
+          alert('Proceeding to checkout...');
+        }
       });
-    
-      // Navbar cart count
-      (function () {
-        const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-        const cartNav = document.getElementById('cart-nav');
-        const count = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
-        cartNav.innerText = count;
-      })();
-    </script>
-    
-    
+    });
+
+    // Navbar cart count
+    function cartData() {
+      const cart = document.getElementById('cart-nav');
+      cart.innerText = JSON.parse(sessionStorage.getItem('cart')).length || 0;
+    }
+    cartData();
+  </script>
+
+
 
 </body>
 
