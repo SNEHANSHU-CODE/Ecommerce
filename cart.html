@@ -84,7 +84,7 @@
   <main class="margin-top-150">
     <h2 class="d-flex justify-content-center p-1">Cart</h2>
     <hr>
-    <div class="d-flex justify-content-center flex-wrap">
+    <div class="d-flex justify-content-center flex-wrap" id="cart-container">
       <div class="d-flex flex-column m-3 border p-2" id="cart-items">
         <h6 class="bg-light p-3 border-bottom m-2">Item List</h6>
         <!-- Cart items will be dynamically rendered here -->
@@ -108,6 +108,10 @@
         </div>
       </div>
     </div>
+    <div id="empty-cart-message" class="text-center d-none">
+      <h3>Your cart is empty</h3>
+      <a href="index.html" class="btn btn-primary mt-3">Continue Shopping</a>
+    </div>
   </main>
 
 
@@ -121,6 +125,18 @@
     crossorigin="anonymous"></script>
 
   <script type="module">
+    // Example cart data (simulate fetching from localStorage or backend)
+    let cartItems = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+    // Check if cart is empty
+    if (cartItems.length === 0) {
+      document.getElementById("cart-container").classList.add("d-none");
+      document.getElementById("empty-cart-message").classList.remove("d-none");
+    } else {
+      document.getElementById("cart-container").classList.remove("d-none");
+      document.getElementById("empty-cart-message").classList.add("d-none");
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
       const cartItemsContainer = document.getElementById('cart-items');
