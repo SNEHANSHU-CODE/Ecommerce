@@ -173,7 +173,7 @@
         const title = document.createElement('h5');
         title.className = 'card-title text-center';
         const fullTitle = product.title;
-        title.textContent = fullTitle.length > 50 ? fullTitle.slice(0, 72) + '...' : fullTitle;
+        title.textContent = fullTitle.length > 40 ? fullTitle.slice(0, 40) + '...' : fullTitle;
         
 
         const description = document.createElement('p');
