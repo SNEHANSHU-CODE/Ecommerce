@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="icon" type="image/x-icon" href="/images/computer-icons-shopping-cart-online-shopping-png-favpng-vrKhvGKSiQxuYu10LeiVYHbUU.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <!--Navbar Section-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+        <div class="container-fluid">
+          
+          <!-- Logo -->
+          <a class="navbar-brand" href="index.html">
+            <img src="Images/pngegg.png" alt="Logo" style="width: 10rem;">
+          </a>
+      
+          <!-- Navbar Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Navbar Links and Buttons -->
+          <div class="collapse navbar-collapse justify-content-around" id="navbarNavAltMarkup">
+            
+            <!-- Navigation Links -->
+            <div class="navbar-nav gap-4">
+              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="products.html">Products</a>
+              <a class="nav-link active" aria-current="page" href="about.html">About</a>
+              <a class="nav-link" href="contact.html">Contact</a>
+            </div>
+      
+            <!-- Buttons Section -->
+            <div class="d-flex gap-4">
+              
+              <a class="btn btn-outline-secondary d-flex align-items-center px-3" href="login.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                  class="bi bi-box-arrow-in-right me-2" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" 
+                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                  <path fill-rule="evenodd" 
+                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                </svg>
+                Login
+            </a>
+      
+              <a class="btn btn-outline-secondary d-flex align-items-center px-3" href="register.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                  class="bi bi-person-plus-fill me-2" viewBox="0 0 16 16">
+                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                  <path fill-rule="evenodd" 
+                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
+                </svg>
+                Register
+            </a>
+      
+              <a class="btn btn-outline-secondary d-flex align-items-center px-3" href="cart.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                  class="bi bi-cart-fill me-2" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                </svg>
+                Cart(<span id="cart-nav">0</span>)
+            </a>
+      
+            </div>
+      
+          </div>
+        </div>
+      </nav> 
+      
+
+      <!--About Section-->
+      <main class="margin-top">
+        <h2 class="d-flex justify-content-center p-3">About Us</h2>
+        <hr>
+        <p class="m-5">Welcome to Ecommerce, your go-to destination for quality products and exceptional shopping experiences. Founded with the vision of making online shopping easy, affordable, and enjoyable, we offer a diverse selection of products, including fashion, electronics, home essentials, beauty, and more.
+
+          At Ecommerce, customer satisfaction is our top priority. We are committed to providing high-quality products at competitive prices, ensuring you get the best value for your money. Our user-friendly website allows for seamless browsing, secure transactions, and a hassle-free checkout process. With fast and reliable shipping, your orders reach you quickly and safely.
+          
+          We believe in building trust through transparency, excellent customer service, and a commitment to innovation. Our dedicated support team is always available to assist with any inquiries, ensuring a smooth and satisfying shopping experience.
+          
+          Whether you’re looking for the latest trends, everyday essentials, or unique finds, we are here to serve your needs. Join our growing community of happy shoppers and experience the convenience of shopping from the comfort of your home. Thank you for choosing Ecommerce—where quality, affordability, and customer satisfaction come first!</p>
+        <h3 class="d-flex justify-content-center p-3">Our Products</h3>
+
+        <div class="d-flex flex-wrap justify-content-center m-4">
+          <div class="card about-card m-3" style="width: 18rem;">
+            <img class="card-img-top" src="Images/pexels-photo-298863.jpeg" alt="Card image cap">
+            <div class="about-card-des">
+              <h6>Men's Clothing</h6>
+            </div>
+          </div>
+          <div class="card about-card m-3" style="width: 18rem;">
+            <img class="card-img-top" src="Images/pexels-photo-7679720 (1).jpeg" alt="Card image cap">
+            <div class="about-card-des">
+              <h6>Men's Clothing</h6>
+            </div>
+          </div>  
+          <div class="card about-card m-3" style="width: 18rem;">
+            <img class="card-img-top" src="Images/pexels-photo-1927259.webp" alt="Card image cap">
+            <div class="about-card-des">
+              <h6>Men's Clothing</h6>
+            </div>
+          </div>
+          <div class="card about-card m-3" style="width: 18rem;">
+            <img class="card-img-top" src="Images/pexels-photo-356056.jpeg" alt="Card image cap">
+            <div class="about-card-des">
+              <h6>Men's Clothing</h6>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+
+      <!--Footer Section-->
+      <footer class="d-flex justify-content-center m-1 p-3">
+        <p>Made by Snehanshu with <a href="https://www.achieversit.com/" target="_blank">AchiversIT</a></p>
+      </footer>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module">
+      (
+        function (){
+          const cart = document.getElementById('cart-nav');
+          cart.innerText = JSON.parse(sessionStorage.getItem('cart')).length || 0;
+        }
+      )();
+    </script>
+</body>
+</html>
