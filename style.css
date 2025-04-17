@@ -56,3 +56,10 @@ textarea{
 .summary{
     height: 240px !important;
 }
+
+.min-width{
+    min-width: 300px;
+    max-width: 544px;
+    padding: 1rem;
+    margin: 1rem;
+}
