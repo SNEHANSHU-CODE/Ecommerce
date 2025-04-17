@@ -1,33 +1,37 @@
-.margin-top-150{
+.margin-top-150 {
     margin-top: 83px;
 }
-form{
+
+form {
     width: 100vw;
 }
-input{
+
+input {
     min-width: 20rem !important;
 }
-textarea{
+
+textarea {
     min-width: 20rem !important;
     min-height: 10rem !important;
 }
 
-#navbar{
+#navbar {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
-.about-card{
+.about-card {
     min-width: 244px;
 }
-.about-card-des{
+
+.about-card-des {
     text-align: center;
     padding: 1rem;
 }
 
-.banner{
+.banner {
     width: 95%;
     height: 100vh;
     overflow: hidden;
@@ -40,24 +44,25 @@ textarea{
 }
 
 
-.card-item{
+.card-item {
     margin: 1rem;
     width: 300px;
 }
-.card-img-top{
+
+.card-img-top {
     height: 250px;
 }
 
 
-.horizontal-card{
+.horizontal-card {
     height: 130px;
 }
 
-.summary{
+.summary {
     height: 240px !important;
 }
 
-.min-width{
+.min-width {
     min-width: 300px;
     max-width: 544px;
     padding: 1rem;

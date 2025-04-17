@@ -88,7 +88,7 @@
 
   <!--Product Section-->
 
-  <main  class="margin-top-150">
+  <main class="margin-top-150">
     <h1 class="d-flex justify-content-center p-3">Latest Products</h1>
     <hr>
     <!--Product Section-->
@@ -118,136 +118,136 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-    <script type="module">
-      // Select the target container
-      const target = document.getElementById("all-item");
-      let Product;
+  <script type="module">
+    // Select the target container
+    const target = document.getElementById("all-item");
+    let Product;
 
-      function handleChange(category) {
-        const container = document.getElementById('all-item');
-        container.innerHTML = ''; // Clear previous items
+    function handleChange(category) {
+      const container = document.getElementById('all-item');
+      container.innerHTML = ''; // Clear previous items
 
-        let filtered = [];
+      let filtered = [];
 
-        if (category === 'all') {
-          filtered = Product;
-        } else {
-          filtered = Product.filter(item => item.category === category);
-        }
-
-        filtered.forEach(product => renderProduct(product));
+      if (category === 'all') {
+        filtered = Product;
+      } else {
+        filtered = Product.filter(item => item.category === category);
       }
-      window.handleChange = handleChange;
 
-      (async function () {
-        try {
-          // Fetch product data from the API
-          const data = await fetch("https://fakestoreapi.com/products");
-          const json = await data.json();
-          Product = json;
-          // Render each product
-          json.forEach((item) => {
-            renderProduct(item);
-          });
-        } catch (e) {
-          console.error("Error fetching product data:", e);
-        }
-      })();
+      filtered.forEach(product => renderProduct(product));
+    }
+    window.handleChange = handleChange;
 
-      function renderProduct(product) {
-        // Reuse target container
-        const container = target;
-
-        const card = document.createElement('div');
-        card.className = 'card card-item';
-
-        const img = document.createElement('img');
-        img.className = 'card-img-top';
-        img.src = product.image;
-        img.alt = product.title;
-
-        const cardBody = document.createElement('div');
-        cardBody.className = 'card-body';
-
-        const title = document.createElement('h5');
-        title.className = 'card-title text-center';
-        title.textContent = product.title;
-
-        const description = document.createElement('p');
-        description.className = 'card-text text-center';
-
-        // Truncate description to 100 characters
-        const fullDesc = product.description;
-        description.textContent = fullDesc.length > 100
-          ? fullDesc.substring(0, 100) + '...'
-          : fullDesc;
-
-        const hr1 = document.createElement('hr');
-
-        const price = document.createElement('p');
-        price.className = 'text-center fs-5 text-muted';
-        price.textContent = `$ ${product.price}`;
-
-        const hr2 = document.createElement('hr');
-
-        const buttonContainer = document.createElement('div');
-        buttonContainer.className = 'ms-4 me-2';
-
-        const detailsButton = document.createElement('a');
-        detailsButton.href = '#';
-        detailsButton.className = 'btn btn-dark m-2';
-        detailsButton.textContent = 'Details';
-
-        const addToCartButton = document.createElement('a');
-        addToCartButton.href = '#';
-        addToCartButton.className = 'btn btn-dark m-2';
-        addToCartButton.textContent = 'Add to Cart';
-
-        addToCartButton.addEventListener('click', function (e) {
-          e.preventDefault(); // Prevent default anchor behavior
-
-          // Retrieve existing cart or initialize a new array
-          const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-
-          // Check if product already exists in cart
-          const productIndex = cart.findIndex(item => item.id === product.id);
-          if (productIndex === -1) {
-            // Add the product if it's not in the cart already
-            cart.push(product);
-            sessionStorage.setItem('cart', JSON.stringify(cart));
-            alert('Item added to cart!');
-            cartData();
-          } else {
-            alert('This item is already in your cart!');
-          }
+    (async function () {
+      try {
+        // Fetch product data from the API
+        const data = await fetch("https://fakestoreapi.com/products");
+        const json = await data.json();
+        Product = json;
+        // Render each product
+        json.forEach((item) => {
+          renderProduct(item);
         });
-
-        buttonContainer.appendChild(detailsButton);
-        buttonContainer.appendChild(addToCartButton);
-
-        // Append all to card body
-        cardBody.appendChild(title);
-        cardBody.appendChild(description);
-        cardBody.appendChild(hr1);
-        cardBody.appendChild(price);
-        cardBody.appendChild(hr2);
-        cardBody.appendChild(buttonContainer);
-
-        // Append image and card body to card
-        card.appendChild(img);
-        card.appendChild(cardBody);
-
-        // Append card to container
-        container.appendChild(card);
+      } catch (e) {
+        console.error("Error fetching product data:", e);
       }
-      
-        function cartData(){
-          const cart = document.getElementById('cart-nav');
-          cart.innerText = JSON.parse(sessionStorage.getItem('cart')).length || 0;
+    })();
+
+    function renderProduct(product) {
+      // Reuse target container
+      const container = target;
+
+      const card = document.createElement('div');
+      card.className = 'card card-item';
+
+      const img = document.createElement('img');
+      img.className = 'card-img-top';
+      img.src = product.image;
+      img.alt = product.title;
+
+      const cardBody = document.createElement('div');
+      cardBody.className = 'card-body';
+
+      const title = document.createElement('h5');
+      title.className = 'card-title text-center';
+      title.textContent = product.title;
+
+      const description = document.createElement('p');
+      description.className = 'card-text text-center';
+
+      // Truncate description to 100 characters
+      const fullDesc = product.description;
+      description.textContent = fullDesc.length > 100
+        ? fullDesc.substring(0, 100) + '...'
+        : fullDesc;
+
+      const hr1 = document.createElement('hr');
+
+      const price = document.createElement('p');
+      price.className = 'text-center fs-5 text-muted';
+      price.textContent = `$ ${product.price}`;
+
+      const hr2 = document.createElement('hr');
+
+      const buttonContainer = document.createElement('div');
+      buttonContainer.className = 'ms-4 me-2';
+
+      const detailsButton = document.createElement('a');
+      detailsButton.href = '#';
+      detailsButton.className = 'btn btn-dark m-2';
+      detailsButton.textContent = 'Details';
+
+      const addToCartButton = document.createElement('a');
+      addToCartButton.href = '#';
+      addToCartButton.className = 'btn btn-dark m-2';
+      addToCartButton.textContent = 'Add to Cart';
+
+      addToCartButton.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        // Retrieve existing cart or initialize a new array
+        const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+        // Check if product already exists in cart
+        const productIndex = cart.findIndex(item => item.id === product.id);
+        if (productIndex === -1) {
+          // Add the product if it's not in the cart already
+          cart.push(product);
+          sessionStorage.setItem('cart', JSON.stringify(cart));
+          alert('Item added to cart!');
+          cartData();
+        } else {
+          alert('This item is already in your cart!');
         }
-      
-      cartData();
-    </script>
+      });
+
+      buttonContainer.appendChild(detailsButton);
+      buttonContainer.appendChild(addToCartButton);
+
+      // Append all to card body
+      cardBody.appendChild(title);
+      cardBody.appendChild(description);
+      cardBody.appendChild(hr1);
+      cardBody.appendChild(price);
+      cardBody.appendChild(hr2);
+      cardBody.appendChild(buttonContainer);
+
+      // Append image and card body to card
+      card.appendChild(img);
+      card.appendChild(cardBody);
+
+      // Append card to container
+      container.appendChild(card);
+    }
+
+    function cartData() {
+      const cart = document.getElementById('cart-nav');
+      cart.innerText = JSON.parse(sessionStorage.getItem('cart')).length || 0;
+    }
+
+    cartData();
+  </script>
 </body>
 
 </html>
