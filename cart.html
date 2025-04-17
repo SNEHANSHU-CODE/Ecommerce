@@ -84,7 +84,7 @@
   <main  class="margin-top">
     <h2 class="d-flex justify-content-center p-1">Cart</h2>
     <hr>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center flex-wrap">
       <div class="d-flex flex-column" id="cart-items">
         <!-- Cart items will be dynamically rendered here -->
       </div>
@@ -137,44 +137,40 @@
             const quantity = product.quantity || 1;
             const itemTotal = product.price * quantity;
     
-            // Cart Row
+            // Parent row
             const row = document.createElement('div');
-            row.className = 'd-flex align-items-center border-bottom py-3 position-relative';
+            row.className = 'row align-items-center py-3 border-bottom';
     
-            // Remove X Icon
-            const removeX = document.createElement('span');
-            removeX.innerHTML = '&times;';
-            removeX.className = 'position-absolute top-0 end-0 text-black fw-bold me-3 mt-2';
-            removeX.style.cursor = 'pointer';
-            removeX.style.fontSize = '1.5rem';
-            removeX.title = 'Remove item';
-            removeX.addEventListener('click', () => {
-              cart.splice(index, 1);
-              sessionStorage.setItem('cart', JSON.stringify(cart));
-              window.location.reload();
-            });
-    
-            // Product Image
+            // Column 1: Image
+            const imgCol = document.createElement('div');
+            imgCol.className = 'col-md-2 col-4';
             const img = document.createElement('img');
             img.src = product.image;
             img.alt = product.title;
             img.className = 'img-fluid';
-            img.style.maxWidth = '150px';
-            img.style.maxHeight = '150px';
-            img.classList.add('me-3');
+            img.style.width = '120px';
+            img.style.height = '120px';
+            imgCol.appendChild(img);
     
-            // Product Details
-            const details = document.createElement('div');
-            details.className = 'd-flex flex-row flex-grow-1';
-    
+            // Column 2: Title + Price
+            const detailsCol = document.createElement('div');
+            detailsCol.className = 'col-md-6 col-8';
             const title = document.createElement('h6');
             title.textContent = product.title;
             title.className = 'mb-2';
-            title.style.maxWidth = "50%";
+            const itemTotalText = document.createElement('p');
+            itemTotalText.className = 'text-muted mb-0';
+            itemTotalText.textContent = `$${product.price.toFixed(2)} x ${quantity} = $${itemTotal.toFixed(2)}`;
+            detailsCol.appendChild(title);
+            detailsCol.appendChild(itemTotalText);
     
-            const qtyRow = document.createElement('div');
-            qtyRow.className = 'd-flex align-items-between';
-            qtyRow.style.width = "90%";
+            // Column 3: Quantity Controls + Remove X
+            const controlsCol = document.createElement('div');
+            controlsCol.className = 'col-md-4 col-12 d-flex align-items-center justify-content-end gap-3';
+    
+            // Quantity control group
+            const qtyControl = document.createElement('div');
+            qtyControl.className = 'd-flex align-items-center gap-2';
     
             const minusBtn = document.createElement('button');
             minusBtn.textContent = '-';
@@ -182,12 +178,13 @@
     
             const qty = document.createElement('span');
             qty.textContent = quantity;
-            qty.className = 'px-3 fw-bold';
+            qty.className = 'fw-bold';
     
             const plusBtn = document.createElement('button');
             plusBtn.textContent = '+';
             plusBtn.className = 'btn btn-outline-secondary btn-sm';
     
+            // Update quantity handlers
             minusBtn.addEventListener('click', () => {
               product.quantity = quantity - 1;
               if (product.quantity <= 0) {
@@ -203,34 +200,36 @@
               window.location.reload();
             });
     
-            qtyRow.appendChild(minusBtn);
-            qtyRow.appendChild(qty);
-            qtyRow.appendChild(plusBtn);
+            qtyControl.appendChild(minusBtn);
+            qtyControl.appendChild(qty);
+            qtyControl.appendChild(plusBtn);
     
-            const itemTotalText = document.createElement('p');
-            itemTotalText.className = 'mt-2';
-            itemTotalText.textContent = `${quantity} * ${product.price} = $${itemTotal.toFixed(2)}`;
-
-            const qtyTotal = document.createElement('div');
-            qtyTotal.className = 'd-flex flex-column';
-
-            qtyTotal.appendChild(qtyRow);
-            qtyTotal.appendChild(itemTotalText);
+            // Remove X button
+            const removeX = document.createElement('span');
+            removeX.innerHTML = '&times;';
+            removeX.className = 'text-black fw-bold fs-4';
+            removeX.style.cursor = 'pointer';
+            removeX.title = 'Remove item';
+            removeX.addEventListener('click', () => {
+              cart.splice(index, 1);
+              sessionStorage.setItem('cart', JSON.stringify(cart));
+              window.location.reload();
+            });
     
-            details.appendChild(title);
-            details.appendChild(qtyTotal);
-            details.appendChild(removeX);
+            // Append qty control + remove to the controls column
+            controlsCol.appendChild(qtyControl);
+            controlsCol.appendChild(removeX);
     
-            // Build row
-            //row.appendChild(removeX);
-            row.appendChild(img);
-            row.appendChild(details);
+            // Assemble the row
+            row.appendChild(imgCol);
+            row.appendChild(detailsCol);
+            row.appendChild(controlsCol);
+    
             cartItemsContainer.appendChild(row);
     
             total += itemTotal;
           });
     
-          // Update summary
           const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
           productCountElement.textContent = `(${totalItems})`;
           cartTotalElement.textContent = `$ ${total.toFixed(2)}`;
@@ -238,7 +237,7 @@
           cartCountElement.textContent = totalItems;
         }
     
-        // Checkout button
+        // Checkout handler
         document.getElementById('checkout-btn')?.addEventListener('click', function () {
           if (cart.length === 0) {
             alert('Your cart is empty!');
@@ -248,7 +247,7 @@
         });
       });
     
-      // Update navbar cart count
+      // Navbar cart count
       (function () {
         const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
         const cartNav = document.getElementById('cart-nav');
@@ -256,6 +255,7 @@
         cartNav.innerText = count;
       })();
     </script>
+    
     
 
 </body>
