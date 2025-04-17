@@ -253,8 +253,8 @@
 
         const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
         productCountElement.textContent = `(${totalItems})`;
-        cartTotalElement.textContent = `$ ${total.toFixed(2)}`;
-        totalAmountElement.textContent = `$ ${(total + 30).toFixed(2)}`;
+        cartTotalElement.textContent = `$ ${total.toFixed(0)}`;
+        totalAmountElement.textContent = `$ ${(total + 30).toFixed(0)}`;
         cartCountElement.textContent = totalItems;
       }
 
