@@ -1,0 +1,91 @@
+.slider-container{
+    background-color: #F6F9FC;
+}
+.slider{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.slides {
+    display: flex;
+    align-items: center;
+    justify-content: "space-between";
+    padding: 20px;
+    box-sizing: border-box
+}
+
+.left-container{
+    flex: 1;
+    padding-right: 20px
+}
+
+.right-container{
+    flex: 1
+}
+
+.slide-img{
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    height: auto;
+    border-radius: 8px
+}
+
+.visit-col{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.service-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card{
+    width: 220px;
+    min-width: 150px;
+    border-radius: 0.5rem;
+}
+
+.service-icon{
+    font-size: 32px;
+    color: #333;
+    padding: 2px;
+    margin: 2px;
+}
+
+.discount-container{
+    background-color: #F6F9FC;
+}
+
+.discount-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.new-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.best-container{
+    background-color: #F6F9FC;
+}
+
+.best-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+}
