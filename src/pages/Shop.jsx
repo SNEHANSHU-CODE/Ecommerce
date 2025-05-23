@@ -6,6 +6,9 @@ import ProductCard from '../components/ProductCard';
 export default function Shop() {
   return (
     <div>
+      <div className='banner'>
+        <h3 className='px-1'>Product</h3>
+      </div>
       <div className='product'>
         {
           products.map((item)=>{

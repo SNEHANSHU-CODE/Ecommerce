@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaStar, FaPlus } from 'react-icons/fa';
-import "./ProductCard.css";
+import "./styles/ProductCard.css";
 import { addToCart } from '../pages/slice/cartSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';

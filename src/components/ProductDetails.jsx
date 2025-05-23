@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from '../assets/products';
+import "./styles/ProductDetails.css";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -11,7 +12,10 @@ export default function ProductDetails() {
   }
 
   return (
-    <div className="container py-5">
+    <div className="container-fluid">
+      <div className='banners'>
+        <h3 className='px-1'>Product</h3>
+      </div>
       <div className="row">
         <div className="col-md-6">
           <img src={product.imgUrl} alt={product.productName} className="img-fluid" />
