@@ -13,7 +13,6 @@ export default function Shop() {
     setCatagory(selectedCategory);
   };
 
-
   return (
     <div>
       <div className='banner'>
@@ -38,8 +37,8 @@ export default function Shop() {
             </div>
           </div>
 
-          <div className="col">
-            <div className="input-group">
+          <div className="col d-flex justify-content-center">
+            <div className="input-group" style={{ maxWidth: "600px" }}>
               <input
                 type="text"
                 className="form-control rounded-pill px-4 py-2 border-0"
