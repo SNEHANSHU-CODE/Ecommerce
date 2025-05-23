@@ -1,8 +1,11 @@
 import React from 'react'
 import { FaShoppingBag, FaUser, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { totalProduct } from '../pages/slice/cartSlice';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
+    const total = useSelector(totalProduct);
     return (
         <nav className="navbar navbar-expand-lg bg-white shadow-sm py-4">
             <div className="container">
@@ -43,7 +46,7 @@ export default function Header() {
                             <Link className="nav-link text-dark" to="/cart">
                                 <FaShoppingCart />
                                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-                                    3
+                                    {total}
                                 </span>
                             </Link>
                         </li>

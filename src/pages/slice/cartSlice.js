@@ -58,5 +58,7 @@ export const {
   clearCart,
 } = cartSlice.actions;
 
+export const totalProduct = (state) => state.cart.cartItems.length;
+
 export default cartSlice.reducer;
 
