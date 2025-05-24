@@ -6,12 +6,18 @@ import { FaSearch } from 'react-icons/fa';
 
 export default function Shop() {
   const [catagory, setCatagory] = useState("sofa");
+  const [input, setInput] = useState("");
 
   const handleCatagory = (e) => {
+    setInput("");
     e.preventDefault();
     const selectedCategory = e.target.dataset.category;
     setCatagory(selectedCategory);
   };
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  }
 
   return (
     <div>
@@ -44,6 +50,8 @@ export default function Shop() {
                 className="form-control rounded-pill px-4 py-2 border-0"
                 placeholder="Search..."
                 style={{ backgroundColor: "#f2f2f2" }}
+                value={input}
+                onChange={handleChange}
               />
               <FaSearch className="position-absolute end-0 top-50 translate-middle-y me-3 text-muted" />
             </div>
@@ -51,15 +59,19 @@ export default function Shop() {
         </div>
       </div>
 
-      <div className='product'>
-        {
-          products.filter(item => item.category === catagory).map((item) => {
-            return (
-              <ProductCard item={item} key={item.id} />
-            )
-          })
-        }
-      </div>
+     <div className='product'>
+  {products
+    .filter(item => {
+      const matchesSearch = new RegExp(input, 'i').test(item.productName);
+      const matchesCategory = item.category === catagory;
+      return input ? matchesSearch : matchesCategory;
+    })
+    .map(item => (
+      <ProductCard item={item} key={item.id} />
+    ))}
+</div>
+
+
     </div>
   )
 }

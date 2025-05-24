@@ -14,7 +14,7 @@ export default function ProductDetails() {
   return (
     <div className="container-fluid">
       <div className='banners'>
-        <h3 className='px-1'>Product</h3>
+        <h3 className='px-1'>{product.productName}</h3>
       </div>
       <div className="row">
         <div className="col-md-6">
