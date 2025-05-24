@@ -7,6 +7,7 @@ import ProductCard from './ProductCard';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../pages/slice/cartSlice';
 import { useToast } from './ToastContext';
+import { Navigate } from "react-router-dom";
 
 
 
@@ -19,15 +20,16 @@ export default function ProductDetails() {
   const product = products.find(item => item.id === id);
 
   const relatedProducts = products.filter(
-    p => p.category === product.category && p.id !== product.id
+    p => p?.category === product?.category && p.id !== product?.id
   );
+
   const handleAddToCart = () => {
     dispatch(addToCart(product));
     triggerToast();
   };
 
   if (!product) {
-    return <div className="text-center py-5">Product not found</div>;
+    return <Navigate to="/not-found" replace />;
   }
 
   return (

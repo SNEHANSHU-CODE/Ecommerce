@@ -17,6 +17,7 @@ export default function AppRouter() {
         <Route path="/shop/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/not-found" element={<NotFound />} />
       </Routes>
     </ToastProvider>
   )
