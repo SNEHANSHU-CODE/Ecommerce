@@ -12,3 +12,12 @@
 .nav-top-margin{
   padding-top: 5.6rem;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

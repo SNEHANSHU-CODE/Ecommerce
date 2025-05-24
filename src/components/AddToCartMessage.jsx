@@ -32,7 +32,7 @@ const AddToCartMessage = ({ show, onClose }) => {
   if (!show) return null;
 
   return (
-    <div className="position-fixed top-0 end-0 p-3" style={{ zIndex: 9999, minWidth: '300px' }}>
+    <div className="position-fixed top-0 end-0 p-1" style={{ zIndex: 9999, minWidth: '250px', marginTop: "6rem" }}>
       <div className="toast show align-items-center border-0 shadow-sm" role="alert" style={{ backgroundColor: '#f5f5f5' }}>
         <div className="d-flex justify-content-between align-items-center p-2 pt-2">
           <div className="d-flex align-items-center">

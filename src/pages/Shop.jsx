@@ -25,9 +25,9 @@ export default function Shop() {
         <h3 className='fw-bold'>Product</h3>
       </div>
       <div className="container my-4">
-        <div className="row justify-content-center align-items-center">
+        <div className="row d-flex justify-content-center align-items-center">
 
-          <div className="col-auto">
+          <div className="col-auto mt-3">
             <div className="dropdown">
               <button className="btn btn-primary rounded-3 px-4 d-flex align-items-center gap-2 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Filter By Category
@@ -43,8 +43,8 @@ export default function Shop() {
             </div>
           </div>
 
-          <div className="col d-flex justify-content-center">
-            <div className="input-group" style={{ maxWidth: "600px" }}>
+          <div className="col d-flex justify-content-center mt-3">
+            <div className="input-group" style={{ maxWidth: "600px" , minWidth: "264px"}}>
               <input
                 type="text"
                 className="form-control rounded-pill px-4 py-2 border-0"

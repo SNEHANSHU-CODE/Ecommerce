@@ -9,7 +9,7 @@ export default function Cart() {
 
   return (
     <div className="container nav-top-margin">
-      <div className="row">
+      <div className="row mt-3">
         {/* Cart Items */}
         <div className="col-lg-8">
           {cartItems.length === 0 ? (

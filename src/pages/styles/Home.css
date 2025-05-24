@@ -10,7 +10,8 @@
 .slides {
     display: flex;
     align-items: center;
-    justify-content: "space-between";
+    justify-content: space-between;
+    gap: 2rem;
     padding: 20px;
     box-sizing: border-box
 }
@@ -22,6 +23,24 @@
 
 .right-container{
     flex: 1
+}
+
+@media (max-width: 768px) {
+  .slides {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .left-container, .right-container {
+    width: 100%;
+  }
+
+  .slide-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .slide-img{

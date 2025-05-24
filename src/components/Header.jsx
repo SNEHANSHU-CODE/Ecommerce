@@ -6,11 +6,18 @@ import { useSelector } from 'react-redux';
 
 export default function Header() {
     const total = useSelector(totalProduct);
+    const closeNavbar = () => {
+        const navbar = document.getElementById('navbarNav');
+        const bsCollapse = new window.bootstrap.Collapse(navbar, {
+            toggle: false,
+        });
+        bsCollapse.hide();
+    };
     return (
         <nav className="w-100 navbar navbar-expand-lg bg-white shadow-sm py-4 position-fixed z-3">
             <div className="container">
                 {/* Logo */}
-                <Link className="navbar-brand fw-bold d-flex align-items-center gap-2" to="/">
+                <Link className="navbar-brand fw-bold d-flex align-items-center gap-2" to="/" onClick={closeNavbar}>
                     <FaShoppingBag />
                     MART
                 </Link>
@@ -29,13 +36,13 @@ export default function Header() {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav align-items-center d-flex gap-4">
                         <li className="nav-item">
-                            <Link className="nav-link fw-medium text-dark" to="/">Home</Link>
+                            <Link className="nav-link fw-medium text-dark" to="/" onClick={closeNavbar}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link fw-medium text-dark" to="/shop">Shop</Link>
+                            <Link className="nav-link fw-medium text-dark" to="/shop" onClick={closeNavbar}>Shop</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link fw-medium text-dark" to="/cart">Cart</Link>
+                            <Link className="nav-link fw-medium text-dark" to="/cart" onClick={closeNavbar}>Cart</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-dark disabled" to="*">
@@ -43,7 +50,7 @@ export default function Header() {
                             </Link>
                         </li>
                         <li className="nav-item position-relative">
-                            <Link className="nav-link text-dark" to="/cart">
+                            <Link className="nav-link text-dark" to="/cart" onClick={closeNavbar}>
                                 <FaShoppingCart />
                                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
                                     {total}
