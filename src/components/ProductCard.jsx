@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FaStar, FaPlus } from 'react-icons/fa';
 import "./styles/ProductCard.css";
 import { addToCart } from '../pages/slice/cartSlice';

@@ -18,3 +18,18 @@
 .banners h3{
     color: rgb(255, 255, 255);
 }
+
+.card .btn-outline-dark {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.related-product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 export default function Header() {
     const total = useSelector(totalProduct);
     return (
-        <nav className="navbar navbar-expand-lg bg-white shadow-sm py-4">
+        <nav className="w-100 navbar navbar-expand-lg bg-white shadow-sm py-4 position-fixed z-3">
             <div className="container">
                 {/* Logo */}
                 <Link className="navbar-brand fw-bold d-flex align-items-center gap-2" to="/">

@@ -58,7 +58,9 @@ export const {
   clearCart,
 } = cartSlice.actions;
 
-export const totalProduct = (state) => state.cart.cartItems.length;
+export const totalProduct = (state) =>
+  state.cart.cartItems.reduce((total, item) => total + item.quantity, 0);
+  
 
 export default cartSlice.reducer;
 

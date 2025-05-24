@@ -20,9 +20,9 @@ export default function Shop() {
   }
 
   return (
-    <div>
+    <div className='nav-top-margin'>
       <div className='banner'>
-        <h3 className='px-1'>Product</h3>
+        <h3 className='fw-bold'>Product</h3>
       </div>
       <div className="container my-4">
         <div className="row justify-content-center align-items-center">

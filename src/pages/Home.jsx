@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { SliderData, serviceData, discoutProducts, products } from '../assets/products.jsx';
 
 import ProductCard from '../components/ProductCard.jsx';
+import DiscountCard from '../components/DiscountCard.jsx';
 
 export default function Home() {
   const settings = {
@@ -22,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className='nav-top-margin'>
       <div className='slider-container'>
         <div className='slider'>
           <Slider {...settings}>
@@ -73,7 +74,7 @@ export default function Home() {
           {
             discoutProducts.map((item) => {
               return (
-                <ProductCard item={item} key={item.id}/>
+                <DiscountCard item={item} key={item.id}/>
               )
             })
           }

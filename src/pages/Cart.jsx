@@ -8,7 +8,7 @@ export default function Cart() {
   const dispatch = useDispatch();
 
   return (
-    <div className="container my-5">
+    <div className="container nav-top-margin">
       <div className="row">
         {/* Cart Items */}
         <div className="col-lg-8">

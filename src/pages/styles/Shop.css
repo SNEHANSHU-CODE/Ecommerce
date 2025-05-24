@@ -16,10 +16,6 @@
     align-items: center;
 }
 
-.banner h3{
-    color: rgb(255, 255, 255);
-}
-
 .dropdown-menu .dropdown-item:hover {
   background-color: #0d6efd;
   color: #fff;

@@ -7,7 +7,7 @@ const AddToCartMessage = ({ show, onClose }) => {
   useEffect(() => {
     if (show) {
       setProgress(100);
-      const duration = 3000;
+      const duration = 2000;
       const interval = 50;
       const decrement = (100 / (duration / interval));
 
