@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaStar, FaPlus } from 'react-icons/fa';
 import "./styles/ProductCard.css";
 import { addToCart } from '../pages/slice/cartSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useToast } from './ToastContext';
 
 export default function ProductCard({ item }) {
 
   const dispatch = useDispatch();
+  const { triggerToast } = useToast();
 
   const handleAddToCart = () => {
     dispatch(addToCart(item));
+    triggerToast();
   };
 
   return (
