@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { SliderData, serviceData, discoutProducts,  } from '../assets/products.jsx';
+import { SliderData, serviceData, discoutProducts, products } from '../assets/products.jsx';
 
 import ProductCard from '../components/ProductCard.jsx';
 
@@ -83,7 +83,7 @@ export default function Home() {
         <h3 className='text-center'>New Arrivals</h3>
         <div className='new-products' >
           {
-            discoutProducts.map((item) => {
+            products.filter(item => item.category === "wireless" || item.category === "mobile").map((item) => {
               return (
                 <ProductCard item={item} key={item.id}/>
               )
@@ -95,7 +95,7 @@ export default function Home() {
         <h3 className='text-center'>Best Sales</h3>
         <div className='best-products' >
           {
-            discoutProducts.map((item) => {
+            products && products.filter(item => item.category === "sofa").map((item) => {
               return (
                 <ProductCard item={item} key={item.id}/>
               )
