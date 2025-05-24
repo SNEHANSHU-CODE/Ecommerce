@@ -18,7 +18,7 @@ export default function Cart() {
             </div>
           ) : (
             cartItems.map((item) => (
-              <div key={item.id} className="d-flex justify-content-between align-items-center bg-white p-3 mb-3 shadow-sm rounded">
+              <div key={item.id} className="d-flex justify-content-between align-items-center bg-white p-3 my-4 shadow-sm rounded">
                 <div className="d-flex align-items-center gap-3">
                   <img src={item.imgUrl} alt={item.productName} style={{ width: 100, height: 80, objectFit: "cover" }} />
                   <div>
@@ -38,7 +38,7 @@ export default function Cart() {
         </div>
 
         {/* Cart Summary */}
-        <div className="col-lg-4">
+        <div className="col-lg-4 mt-4">
           {cartItems.length > 0 && (
             <div className="p-3 bg-white shadow-sm rounded">
               <h6 className="border-bottom pb-2 mb-2">Cart Summary</h6>
