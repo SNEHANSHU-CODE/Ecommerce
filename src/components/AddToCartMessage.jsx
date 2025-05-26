@@ -15,7 +15,6 @@ const AddToCartMessage = ({ show, onClose }) => {
         setProgress(prev => {
           if (prev <= 0) {
             clearInterval(timer);
-            // 🔁 DEFER setShowToast via onClose AFTER render
             setTimeout(() => {
               onClose();
             }, 0);

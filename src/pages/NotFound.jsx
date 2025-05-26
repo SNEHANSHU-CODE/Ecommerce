@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaSadTear } from "react-icons/fa"; // Optional: for additional styling
+import { FaSadTear } from "react-icons/fa";
 
 export default function NotFound() {
   return (
