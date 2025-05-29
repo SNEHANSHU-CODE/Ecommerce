@@ -53,6 +53,8 @@ export default function Shop() {
                 style={{ backgroundColor: "#f2f2f2" }}
                 value={input}
                 onChange={handleChange}
+                name='search'
+                id='search'
               />
               <FaSearch className="position-absolute end-0 top-50 translate-middle-y me-3 text-muted" />
             </div>
