@@ -60,6 +60,7 @@ export default function Home() {
                     <p>{desc}</p>
                     <button
                       className='visit-col'
+                      type='button'
                     >
                       Visit Collections
                     </button>

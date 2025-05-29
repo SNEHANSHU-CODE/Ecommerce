@@ -28,9 +28,9 @@ export default function Cart() {
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-2">
-                  <button className="btn btn-light border" onClick={() => dispatch(increaseQuantity(item.id))}><FaPlus /></button>
-                  <button className="btn btn-light border" onClick={() => dispatch(decreaseQuantity(item.id))}><FaMinus /></button>
-                  <button className="btn btn-link text-danger fs-4" onClick={() => dispatch(removeFromCart(item.id))}><FaTimes /></button>
+                  <button className="btn btn-light border" type='button' onClick={() => dispatch(increaseQuantity(item.id))}><FaPlus /></button>
+                  <button className="btn btn-light border" type='button' onClick={() => dispatch(decreaseQuantity(item.id))}><FaMinus /></button>
+                  <button className="btn btn-link text-danger fs-4" type='button' onClick={() => dispatch(removeFromCart(item.id))}><FaTimes /></button>
                 </div>
               </div>
             ))

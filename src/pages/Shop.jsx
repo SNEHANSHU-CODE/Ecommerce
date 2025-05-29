@@ -3,6 +3,7 @@ import { products } from '../assets/products';
 import "./styles/Shop.css";
 import ProductCard from '../components/ProductCard';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Shop() {
   const [catagory, setCatagory] = useState("sofa");
@@ -33,11 +34,11 @@ export default function Shop() {
                 Filter By Category
               </button>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#" onClick={handleCatagory} data-category="sofa">Sofa</a></li>
-                <li><a className="dropdown-item" href="#" onClick={handleCatagory} data-category="chair">Chair</a></li>
-                <li><a className="dropdown-item" href="#" onClick={handleCatagory} data-category="watch">Watch</a></li>
-                <li><a className="dropdown-item" href="#" onClick={handleCatagory} data-category="mobile">Mobile</a></li>
-                <li><a className="dropdown-item" href="#" onClick={handleCatagory} data-category="wireless">Wireless</a></li>
+                <li><Link className="dropdown-item" href="#" onClick={handleCatagory} data-category="sofa">Sofa</Link></li>
+                <li><Link className="dropdown-item" href="#" onClick={handleCatagory} data-category="chair">Chair</Link></li>
+                <li><Link className="dropdown-item" href="#" onClick={handleCatagory} data-category="watch">Watch</Link></li>
+                <li><Link className="dropdown-item" href="#" onClick={handleCatagory} data-category="mobile">Mobile</Link></li>
+                <li><Link className="dropdown-item" href="#" onClick={handleCatagory} data-category="wireless">Wireless</Link></li>
               </ul>
 
             </div>

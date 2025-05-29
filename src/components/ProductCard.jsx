@@ -36,7 +36,7 @@ export default function ProductCard({ item }) {
           {/* Price and Add Icon */}
           <div className="d-flex justify-content-between align-items-center">
             <h5 className="mb-0">${item.price}</h5>
-            <button onClick={handleAddToCart} className="add-to-cart">
+            <button onClick={handleAddToCart} className="add-to-cart" type='button'>
               <FaPlus />
             </button>
           </div>

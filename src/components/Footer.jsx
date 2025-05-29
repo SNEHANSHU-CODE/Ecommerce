@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaShoppingBag } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
@@ -20,21 +21,21 @@ export default function Footer() {
                     {/* About Us */}
                     <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 className="text-uppercase mb-4 fw-bold">About Us</h5>
-                        <p><a href="#" className="text-white text-decoration-none">Careers</a></p>
-                        <p><a href="#" className="text-white text-decoration-none">Our Stores</a></p>
-                        <p><a href="#" className="text-white text-decoration-none">Our Cares</a></p>
-                        <p><a href="#" className="text-white text-decoration-none">Terms & Conditions</a></p>
-                        <p><a href="#" className="text-white text-decoration-none">Privacy Policy</a></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Careers</Link></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Our Stores</Link></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Our Cares</Link></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Terms & Conditions</Link></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Privacy Policy</Link></p>
                     </div>
 
                     {/* Customer Care */}
                     <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 className="text-uppercase mb-4 fw-bold">Customer Care</h5>
-                        <p><a href="#" className="text-white text-decoration-none">Help Center</a></p>
-                        <p><a href="#" className="text-white text-decoration-none">How to Buy</a></p>
-                        <p><a href="#" className="text-white text-decoration-none">Track Your Order</a></p>
-                        <p><a href="#" className="text-white text-decoration-none">Corporate & Bulk Purchasing</a></p>
-                        <p><a href="#" className="text-white text-decoration-none">Returns & Refunds</a></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Help Center</Link></p>
+                        <p><Link href="#" className="text-white text-decoration-none">How to Buy</Link></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Track Your Order</Link></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Corporate & Bulk Purchasing</Link></p>
+                        <p><Link href="#" className="text-white text-decoration-none">Returns & Refunds</Link></p>
                     </div>
 
                     {/* Contact Info */}

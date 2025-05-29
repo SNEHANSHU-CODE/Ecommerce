@@ -58,7 +58,7 @@ export default function ProductDetails() {
           <h4 className="text-primary">${product.price}</h4>
           <p className="text-muted">category: <strong>{product.category}</strong></p>
           <p>{product.shortDesc}</p>
-          <button className="btn px-4 mt-3" style={{ backgroundColor: "#29609b", color: "white" }} onClick={handleAddToCart} >Add To Cart</button>
+          <button className="btn px-4 mt-3" style={{ backgroundColor: "#29609b", color: "white" }} onClick={handleAddToCart} type='button'>Add To Cart</button>
         </div>
       </div>
 
